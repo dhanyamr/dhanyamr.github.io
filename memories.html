@@ -1,0 +1,89 @@
+<html>
+  <head>
+   
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/main.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.1.2/collection/icon/icon.css">
+    <title>Happy Birthday Nisha</title>
+    <meta content="">
+    <style></style>
+  </head>
+  <body>
+     <div class="wrapper">
+     <h1>Happy Birthday Nisha!</h1>
+  <div class="slider">
+    <img class="active" src="/images/1.jpeg">
+    <img src="/images/2.jpeg">
+    <img src="/images/3.jpeg">
+    <img src="/images/4.jpeg">
+    <img src="/images/5.jpeg">
+    <img src="/images/6.jpeg">
+    <img src="/images/7.jpeg">
+    <img src="/images/8.jpeg">
+    <img src="/images/9.jpeg">
+  </div>
+  <nav class="slider-nav">
+    <ul>
+      <li class="arrow">
+        <a class="previous">
+          <span>
+            <svg id="i-arrow-left" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M10 6 L2 16 10 26 M2 16 L30 16" />
+</svg>
+          </span>
+        </a>
+      </li>
+      <li class="arrow">
+        <a class="next">
+          <span>
+            <svg id="i-arrow-right" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+    <path d="M22 6 L30 16 22 26 M30 16 L2 16" />
+</svg>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+      
+      
+      
+<script>
+const items = document.querySelectorAll('img');
+const itemCount = items.length;
+const nextItem = document.querySelector('.next');
+const previousItem = document.querySelector('.previous');
+let count = 0;
+
+function showNextItem() {
+  items[count].classList.remove('active');
+
+  if(count < itemCount - 1) {
+    count++;
+  } else {
+    count = 0;
+  }
+
+  items[count].classList.add('active');
+  console.log(count);
+}
+
+function showPreviousItem() {
+  items[count].classList.remove('active');
+
+  if(count > 0) {
+    count--;
+  } else {
+    count = itemCount - 1;
+  }
+
+  items[count].classList.add('active');
+  console.log(count);
+}
+
+nextItem.addEventListener('click', showNextItem);
+previousItem.addEventListener('click', showPreviousItem);      
+</script>
+ 
+  </body>
+</html>
